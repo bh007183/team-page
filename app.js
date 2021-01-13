@@ -73,8 +73,11 @@ inquirer.prompt([
 
         case "Done!":
             console.log("Complete!")
-            render(team)
-            console.log(team)
+            fs.writeFile("output/team.html", render(team), function (err){
+                if(err){
+                    console.log("error")
+            }})
+            
     
         default:
             break;
